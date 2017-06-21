@@ -8,9 +8,9 @@ import cn.soso.entity.ServicePackage;
 import cn.soso.utils.CardUtil;
 
 /**
- * ÒµÎñÀà
+ * ä¸šåŠ¡ç±»
  * 
- * @author ±±´óÇàÄñ
+ * @author éŸ©å¼º
  * 
  */
 public class SosoMgr {
@@ -20,11 +20,11 @@ public class SosoMgr {
 	public static void main(String[] args) {
 		SosoMgr soso = new SosoMgr();
 		soso.mainMenu();
-		System.out.println("Ğ»Ğ»Ê¹ÓÃ£¡");
+		System.out.println("è°¢è°¢ä½¿ç”¨ï¼");
 	}
 
 	/**
-	 * Ö÷Á÷³Ì
+	 * ä¸»æµç¨‹
 	 */
 	public void mainMenu() {
 		int menuChoose = 0;
@@ -34,37 +34,37 @@ public class SosoMgr {
 		utils.initScenes();
 		//Common.typesInit();
 		do {
-			System.out.println("\n*************»¶Ó­Ê¹ÓÃà²à²ÒÆ¶¯ÒµÎñ´óÌü***************");
-			System.out.println("1.ÓÃ»§µÇÂ¼   2.ÓÃ»§×¢²á   3.Ê¹ÓÃà²à²   4.»°·Ñ³äÖµ  5.×Ê·ÑËµÃ÷  6.ÍË³öÏµÍ³");
-			System.out.print("ÇëÑ¡Ôñ£º");
+			System.out.println("\n*************æ¬¢è¿ä½¿ç”¨å—–å—–ç§»åŠ¨ä¸šåŠ¡å¤§å…***************");
+			System.out.println("1.ç”¨æˆ·ç™»å½•   2.ç”¨æˆ·æ³¨å†Œ   3.ä½¿ç”¨å—–å—–   4.è¯è´¹å……å€¼  5.èµ„è´¹è¯´æ˜  6.é€€å‡ºç³»ç»Ÿ");
+			System.out.print("è¯·é€‰æ‹©ï¼š");
 			menuChoose = input.nextInt();
-			// ·ÖÖ§Óï¾ä£º¸ù¾İ¹¦ÄÜ±àºÅÖ´ĞĞÏàÓ¦¹¦ÄÜ
+			// åˆ†æ”¯è¯­å¥ï¼šæ ¹æ®åŠŸèƒ½ç¼–å·æ‰§è¡Œç›¸åº”åŠŸèƒ½
 			switch (menuChoose) {
 			case 1:
-				//ÓÃ»§µÇÂ¼
-				System.out.print("ÇëÊäÈëÊÖ»ú¿¨ºÅ£º");
+				//ç”¨æˆ·ç™»å½•
+				System.out.print("è¯·è¾“å…¥æ‰‹æœºå¡å·ï¼š");
 				mobileNumber = input.next();
-				System.out.print("ÇëÊäÈëÃÜÂë£º");
+				System.out.print("è¯·è¾“å…¥å¯†ç ï¼š");
 				password = input.next();
 				if (utils.isExistCard(mobileNumber, password)) {
 					cardMenu(mobileNumber);
 				}else{
-					System.out.println("¶Ô²»Æğ£¬ÄúÊäÈëµÄĞÅÏ¢ÓĞÎó£¬ÎŞ·¨µÇÂ¼£¡");
+					System.out.println("å¯¹ä¸èµ·ï¼Œæ‚¨è¾“å…¥çš„ä¿¡æ¯æœ‰è¯¯ï¼Œæ— æ³•ç™»å½•ï¼");
 				}
 				continue;
 			case 2:
-				//ÓÃ»§×¢²á
+				//ç”¨æˆ·æ³¨å†Œ
 				registCard();
 				continue;
 			case 3:
 				
-				//Ê¹ÓÃà²à²
-				System.out.print("ÇëÊäÈëÊÖ»ú¿¨ºÅ£º");
+				//ä½¿ç”¨å—–å—–
+				System.out.print("è¯·è¾“å…¥æ‰‹æœºå¡å·ï¼š");
 				 mobileNumber = input.next();				
 				
 				if (utils.isExistCard(mobileNumber)) {
 					try {
-/*						System.out.println("****Ê¹ÓÃÖ®Ç°****");
+/*						System.out.println("****ä½¿ç”¨ä¹‹å‰****");
 						utils.showRemainDetail(mobileNumber);
 						utils.showAmountDetail(mobileNumber);*/
 						utils.userSoso(mobileNumber);
@@ -72,34 +72,34 @@ public class SosoMgr {
 						System.err.println(e.getMessage());
 					}
 				}else{
-					System.out.println("¶Ô²»Æğ£¬¸Ã¿¨ºÅÎ´×¢²á£¬²»ÄÜÊ¹ÓÃ£¡");
+					System.out.println("å¯¹ä¸èµ·ï¼Œè¯¥å¡å·æœªæ³¨å†Œï¼Œä¸èƒ½ä½¿ç”¨ï¼");
 				}
 				
-				/*System.out.println("****Ê¹ÓÃÖ®ºó****");
+				/*System.out.println("****ä½¿ç”¨ä¹‹å****");
 				utils.showRemainDetail(mobileNumber);
 				utils.showAmountDetail(mobileNumber);*/
 				continue;
 			case 4:
-				//»°·Ñ³äÖµ
-				System.out.print("ÇëÊäÈë³äÖµ¿¨ºÅ£º");
+				//è¯è´¹å……å€¼
+				System.out.print("è¯·è¾“å…¥å……å€¼å¡å·ï¼š");
 				mobileNumber = input.next();
 				if (utils.isExistCard(mobileNumber)) {
-				System.out.print("ÇëÊäÈë³äÖµ½ğ¶î£º");
+				System.out.print("è¯·è¾“å…¥å……å€¼é‡‘é¢ï¼š");
 				double money = input.nextDouble();				
 				utils.chargeMoney(mobileNumber, money);
 				}else{
-					System.out.println("¶Ô²»Æğ£¬Òª³äÖµµÄ¿¨ºÅÎ´×¢²á£¬ÎŞ·¨³äÖµ£¡");
+					System.out.println("å¯¹ä¸èµ·ï¼Œè¦å……å€¼çš„å¡å·æœªæ³¨å†Œï¼Œæ— æ³•å……å€¼ï¼");
 				}
 				continue;				
 			case 5:
-				System.out.println("\n*****×Ê·ÑËµÃ÷******");
+				System.out.println("\n*****èµ„è´¹è¯´æ˜******");
 				utils.showDescription();
 				continue;	
 			case 6:
-				//ÍË³öÏµÍ³
+				//é€€å‡ºç³»ç»Ÿ
 				break;
 			default:
-				//Ñ¡ÔñÆäËûÊı×ÖÍË³öÏµÍ³
+				//é€‰æ‹©å…¶ä»–æ•°å­—é€€å‡ºç³»ç»Ÿ
 				break;
 			}
 			break;
@@ -107,7 +107,7 @@ public class SosoMgr {
 	}
 
 	/**
-	 * ÊÖ»ú¿¨¹¦ÄÜ²Ëµ¥
+	 * æ‰‹æœºå¡åŠŸèƒ½èœå•
 	 * 
 	 * @param number
 	 * @return
@@ -115,37 +115,37 @@ public class SosoMgr {
 	public int cardMenu(String mobileNumber) {
 		   int menuChoose = 0;
 		do {
-			System.out.println("\n*****à²à²ÒÆ¶¯ÓÃ»§²Ëµ¥*****");
-			System.out.println("1.±¾ÔÂÕËµ¥²éÑ¯");
-			System.out.println("2.Ì×²ÍÓàÁ¿²éÑ¯");
-			System.out.println("3.´òÓ¡Ïû·ÑÏêµ¥");
-			System.out.println("4.Ì×²Í±ä¸ü");
-			System.out.println("5.°ìÀíÍËÍø");
-			System.out.print("ÇëÑ¡Ôñ(ÊäÈë1~5Ñ¡Ôñ¹¦ÄÜ£¬ÆäËû¼ü·µ»ØÉÏÒ»¼¶)£º");
+			System.out.println("\n*****å—–å—–ç§»åŠ¨ç”¨æˆ·èœå•*****");
+			System.out.println("1.æœ¬æœˆè´¦å•æŸ¥è¯¢");
+			System.out.println("2.å¥—é¤ä½™é‡æŸ¥è¯¢");
+			System.out.println("3.æ‰“å°æ¶ˆè´¹è¯¦å•");
+			System.out.println("4.å¥—é¤å˜æ›´");
+			System.out.println("5.åŠç†é€€ç½‘");
+			System.out.print("è¯·é€‰æ‹©(è¾“å…¥1~5é€‰æ‹©åŠŸèƒ½ï¼Œå…¶ä»–é”®è¿”å›ä¸Šä¸€çº§)ï¼š");
 			 menuChoose = input.nextInt();
 			switch (menuChoose) {
 			case 1:
-				System.out.println("\n*****±¾ÔÂÕËµ¥²éÑ¯******");
+				System.out.println("\n*****æœ¬æœˆè´¦å•æŸ¥è¯¢******");
 				utils.showAmountDetail(mobileNumber);
 				continue;
 			case 2:
-				System.out.println("\n*****Ì×²ÍÓàÁ¿²éÑ¯******");
+				System.out.println("\n*****å¥—é¤ä½™é‡æŸ¥è¯¢******");
 				utils.showRemainDetail(mobileNumber);
 				continue;
 			case 3:
-				System.out.println("\n*****Ïû·ÑÏêµ¥²éÑ¯******");
+				System.out.println("\n*****æ¶ˆè´¹è¯¦å•æŸ¥è¯¢******");
 				utils.printConsumInfo(mobileNumber);
 				continue;
 			case 4:
-				System.out.println("\n*****Ì×²Í±ä¸ü******");
-				System.out.print("1.»°ßëÌ×²Í  2.Íø³æÌ×²Í  3.³¬ÈËÌ×²Í  ÇëÑ¡Ôñ£¨ĞòºÅ£©£º");				
+				System.out.println("\n*****å¥—é¤å˜æ›´******");
+				System.out.print("1.è¯å” å¥—é¤  2.ç½‘è™«å¥—é¤  3.è¶…äººå¥—é¤  è¯·é€‰æ‹©ï¼ˆåºå·ï¼‰ï¼š");				
 				utils.changingPack(mobileNumber, input.next());
 				continue;
 			case 5:
-				System.out.println("\n*****°ìÀíÍËÍø******");
+				System.out.println("\n*****åŠç†é€€ç½‘******");
 				utils.delCard(mobileNumber);
-				System.out.println("Ğ»Ğ»Ê¹ÓÃ£¡");
-				System.exit(1);	 //°ìÀíÍËÍøºóÍË³öÏµÍ³	
+				System.out.println("è°¢è°¢ä½¿ç”¨ï¼");
+				System.exit(1);	 //åŠç†é€€ç½‘åé€€å‡ºç³»ç»Ÿ	
 						
 			}
 			
@@ -155,12 +155,12 @@ public class SosoMgr {
 	}
 	
 	/**
-	 * ×¢²áĞÂ¿¨Á÷³Ì
+	 * æ³¨å†Œæ–°å¡æµç¨‹
 	 */
 	public void registCard(){
 		String[] newNumbers = utils.getNewNumbers(9);
-		//ÏÔÊ¾¿É¹©Ñ¡ÔñµÄÊÖ»úºÅÁĞ±í
-		System.out.println("*****¿ÉÑ¡ÔñµÄ¿¨ºÅ*****");
+		//æ˜¾ç¤ºå¯ä¾›é€‰æ‹©çš„æ‰‹æœºå·åˆ—è¡¨
+		System.out.println("*****å¯é€‰æ‹©çš„å¡å·*****");
 		
 		for(int i=0;i<9;i++){
 			System.out.print((i+1)+"."+newNumbers[i]+"\t\t");
@@ -168,35 +168,35 @@ public class SosoMgr {
 				System.out.println();
 			}
 		}
-		//Ñ¡ÔñÊÖ»úºÅ
-		System.out.print("ÇëÑ¡Ôñ¿¨ºÅ£¨ÊäÈë1~9µÄĞòºÅ£©£º");		
+		//é€‰æ‹©æ‰‹æœºå·
+		System.out.print("è¯·é€‰æ‹©å¡å·ï¼ˆè¾“å…¥1~9çš„åºå·ï¼‰ï¼š");		
 		String number = newNumbers[input.nextInt()-1];
 		
-		//Ñ¡ÔñÌ×²ÍÀàĞÍ
-		System.out.print("1.»°ßëÌ×²Í  2.Íø³æÌ×²Í  3.³¬ÈËÌ×²Í£¬  ");
-		System.out.print("ÇëÑ¡ÔñÌ×²Í(ÊäÈëĞòºÅ)£º");
+		//é€‰æ‹©å¥—é¤ç±»å‹
+		System.out.print("1.è¯å” å¥—é¤  2.ç½‘è™«å¥—é¤  3.è¶…äººå¥—é¤ï¼Œ  ");
+		System.out.print("è¯·é€‰æ‹©å¥—é¤(è¾“å…¥åºå·)ï¼š");
 		//utils.getPackList();
-		//»ñÈ¡Ì×²Í¶ÔÏó 
+		//è·å–å¥—é¤å¯¹è±¡ 
 		ServicePackage pack = utils.createPack(input.nextInt());
 		
-		//ÊäÈëÓÃ»§Ãû
-		System.out.print("ÇëÊäÈëĞÕÃû£º");
+		//è¾“å…¥ç”¨æˆ·å
+		System.out.print("è¯·è¾“å…¥å§“åï¼š");
 		String name = input.next();
 		
-		//ÊäÈëÃÜÂë
-		System.out.print("ÇëÊäÈëÃÜÂë£º");
+		//è¾“å…¥å¯†ç 
+		System.out.print("è¯·è¾“å…¥å¯†ç ï¼š");
 		String password = input.next();
 		
-		//ÊäÈëÔ¤´æ»°·Ñ½ğ¶î
+		//è¾“å…¥é¢„å­˜è¯è´¹é‡‘é¢
 		double money = 0;
-		System.out.print("ÇëÊäÈëÔ¤´æ»°·Ñ½ğ¶î£º");
+		System.out.print("è¯·è¾“å…¥é¢„å­˜è¯è´¹é‡‘é¢ï¼š");
 		 money = input.nextDouble();
 		while(money<pack.getPrice()){
-			System.out.print("ÄúÔ¤´æµÄ»°·Ñ½ğ¶î²»×ãÒÔÖ§¸¶±¾ÔÂ¹Ì¶¨Ì×²Í×Ê·Ñ£¬ÇëÖØĞÂ³äÖµ£º");
+			System.out.print("æ‚¨é¢„å­˜çš„è¯è´¹é‡‘é¢ä¸è¶³ä»¥æ”¯ä»˜æœ¬æœˆå›ºå®šå¥—é¤èµ„è´¹ï¼Œè¯·é‡æ–°å……å€¼ï¼š");
 			money = input.nextDouble();
 		}
 				
-		//´´½¨ĞÂ¿¨¶ÔÏó²¢Ìí¼Ó
+		//åˆ›å»ºæ–°å¡å¯¹è±¡å¹¶æ·»åŠ 
 		MobileCard newCard = new MobileCard(name,password,number,pack,pack.getPrice(),money-pack.getPrice());
 		utils.addCard(newCard);		
 	}
